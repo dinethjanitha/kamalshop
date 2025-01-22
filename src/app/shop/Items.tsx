@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import AddtoCart from './AddtoCart';
 
 interface ShopItem{
     id:number,
@@ -51,9 +52,10 @@ const shopItems:ShopItem[] = [
 
 const ShopItems = () => {
   return (
-    <div className='grid grid-cols-3 mx-32'>
+    <div className='grid lg:grid-cols-3 lg:mx-32 sm:mx-32 sm:grid-cols-1 md:grid-cols-2'>
 
         {shopItems.map((item) => {
+        //    const arr = [item.id , item.name , item.price]
             return (
                 <div className="card bg-base-100 w-96 shadow-xl my-4" key= {item.id}>
                 <figure>
@@ -74,9 +76,8 @@ const ShopItems = () => {
                         <div className="badge badge-outline">{item.category}</div>
                         {/* <div className="badge badge-outline">Products</div> */}
                     </div>
-                    <div className="card-actions justify-end mt-5">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
+                    
+                    <AddtoCart cartItem={{ id: item.id ,  name: item.name , price: item.price}}/>
                 </div>
                 </div>
             )

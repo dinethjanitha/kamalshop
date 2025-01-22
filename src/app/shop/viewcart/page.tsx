@@ -1,8 +1,13 @@
-import React from 'react'
+'use client';
+import React, { useContext } from 'react'
+import { ShopContext } from '../ShopContext';
 
 const ViewCart = () => {
+
+  const context = useContext(ShopContext);
+
   return (
-    <div>ViewCart</div>
+    <div>{context?.cartItems.length}</div>
   )
 }
 
