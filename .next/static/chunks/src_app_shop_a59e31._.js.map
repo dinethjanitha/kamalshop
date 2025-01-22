@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://D%3A/PRACTICE/next%20js/kamalshop/src/app/shop/AddtoCart.tsx"],"sourcesContent":["\"use client\";\r\nimport React, { useContext } from 'react'\r\nimport { ShopContext } from './ShopContext';\r\n\r\ninterface ItemProp{\r\n    cartItem : {\r\n      id : number,\r\n      name : string,\r\n      price : number\r\n    }\r\n}\r\n\r\n\r\nconst AddtoCart = ({cartItem}:ItemProp) => {\r\n // console.log(\"-----------------------\");\r\n // console.log(cartItem);\r\n    const context = useContext(ShopContext);\r\n  return (\r\n    <div className=\"card-actions justify-end mt-5\">\r\n                        <button className=\"btn btn-primary\" onClick={() => context?.addToCart(cartItem)}>Buy Now</button>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AddtoCart"],"names":[],"mappings":";;;;AACA;AACA;;;AAFA;;;AAaA,MAAM,YAAY,CAAC,EAAC,QAAQ,EAAU;;IACrC,0CAA0C;IAC1C,yBAAyB;IACtB,MAAM,UAAU,CAAA,GAAA,6JAAA,CAAA,aAAU,AAAD,EAAE,qIAAA,CAAA,cAAW;IACxC,qBACE,6LAAC;QAAI,WAAU;kBACK,cAAA,6LAAC;YAAO,WAAU;YAAkB,SAAS,IAAM,SAAS,UAAU;sBAAW;;;;;;;;;;;AAGzG;GATM;KAAA;uCAWS"}},
+    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

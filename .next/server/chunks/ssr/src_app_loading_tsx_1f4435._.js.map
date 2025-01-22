@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://D%3A/PRACTICE/next%20js/kamalshop/src/app/loading.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst Loading = () => {\r\n  return (\r\n    <div>Loading...</div>\r\n  )\r\n}\r\n\r\nexport default Loading"],"names":[],"mappings":";;;;;AAEA,MAAM,UAAU;IACd,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
