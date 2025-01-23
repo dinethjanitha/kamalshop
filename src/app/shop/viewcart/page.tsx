@@ -5,10 +5,6 @@ import OrderSummary from './OrderSummary';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import Link from 'next/link';
 
-
-
-
-
 const ViewCart = () => {
 
 
