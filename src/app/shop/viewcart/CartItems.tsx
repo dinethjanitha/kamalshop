@@ -53,6 +53,8 @@ const CartItems = () => {
                 )
             })
         }
+
+        {/* change git config details */}
         
     </div>
   )
