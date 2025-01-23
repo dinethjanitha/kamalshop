@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import { ShopContext } from './shop/ShopContext';
 import RemoveFromCart from './shop/RemoveFromCart';
 
@@ -10,30 +10,7 @@ const NavBarCartPreview = () => {
     
     console.log("Renderd!!!")
 
-    const [total , setTotal] = useState<number>(0);
-
-
-    const totalCartItems:number = context?.cartItems.length || 0;
-
-    useEffect(() => {
-
-        setTotal(0);
-        let i:number = 0;
-   
-    let subtotal = 0;
     
-    for (i; i < totalCartItems; i++){
-        console.log("Looping...");
-        
-        subtotal = subtotal + ((context?.cartItems[i].price || 0) * (context?.cartItems[i].quantity || 0));
-    }
-
-    setTotal(subtotal)
-    },[ context?.cartItems ])
- 
-    console.log("=================================sdsdsd====================")
-    console.log(totalCartItems)
-
 
     //const totalvalue 
 
@@ -51,9 +28,12 @@ const NavBarCartPreview = () => {
                 )
             } ) : 0}
             <hr />
-            <span className="text-balance">Subtotal: ${total.toFixed(2) || 0}</span>
+            <span className="text-balance">Subtotal: ${context?.total.toFixed(2) || 0}</span>
             <div className="card-actions">
-            <   button className="btn btn-primary btn-block"><Link href="/shop/viewcart">view cart</Link></button>
+            <Link className='btn btn-primary btn-block' href="/shop/viewcart">
+                                   view cart
+            </Link>
+            
             </div>
         </div>
     </div>

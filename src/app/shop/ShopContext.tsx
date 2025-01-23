@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, ReactNode, useState } from 'react'
+import React, { createContext, ReactNode, useEffect, useState } from 'react'
 
 interface CartType{
     id:number,
@@ -18,8 +18,11 @@ interface ItemType {
 
 interface ShopContextType {
     cartItems : CartType[],
+    total : number,
     addToCart : (item:ItemType) => void,
     removeFromCart : (item:CartType) => void 
+    addQuantity : (item:number) => void,
+    deQuantity : (item:number) => void,
 }
 
 export const ShopContext = createContext<ShopContextType | undefined>(undefined)
@@ -56,8 +59,71 @@ export const CartProvider : React.FC<{children : ReactNode}> = ({children}) => {
         setcartItems(newCartItem);
     }
 
+
+    const addQuantity = (id:number) => {
+        const updatedCart:CartType[] = cartItems.map((e) => {
+            if(e.id == id ){
+                return {...e , quantity : e.quantity + 1 }
+            }else{
+                return e;
+            }
+        })
+
+        setcartItems(updatedCart)
+
+        console.log(updatedCart);
+    }
+
+
+    const deQuantity = (id:number) => {
+        
+
+        const updatedCart:CartType[] = cartItems.map((e) => {
+            if(e.id == id ){
+                if(e.quantity == 0){
+                    
+                    return {...e , quantity : 0 }
+                }else{
+                    return {...e , quantity : e.quantity - 1 }
+                }
+            }else{
+                return e
+            }
+        })
+
+        
+        setcartItems(updatedCart)
+
+        console.log(updatedCart);
+    }
+
+
+    const [total , setTotal] = useState<number>(0);
+
+
+    const totalCartItems:number = cartItems.length || 0;
+
+    useEffect(() => {
+
+        setTotal(0);
+        let i:number = 0;
+   
+    let subtotal = 0;
+    
+    for (i; i < totalCartItems; i++){
+        console.log("Looping...");
+        
+        subtotal = subtotal + ((cartItems[i].price || 0) * (cartItems[i].quantity || 0));
+    }
+
+    setTotal(parseFloat(subtotal.toFixed(2)))
+    },[ cartItems ])
+ 
+    console.log(totalCartItems)
+
+
     return (
-        <ShopContext.Provider value={{cartItems , addToCart , removeFromCart }}>
+        <ShopContext.Provider value={{cartItems ,total, addToCart , removeFromCart , addQuantity  ,deQuantity}}>
             {children}
         </ShopContext.Provider>
     )

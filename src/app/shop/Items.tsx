@@ -52,12 +52,12 @@ const shopItems:ShopItem[] = [
 
 const ShopItems = () => {
   return (
-    <div className='grid lg:grid-cols-3 lg:mx-32 sm:mx-32 sm:grid-cols-1 md:grid-cols-2'>
+    <div className='grid lg:grid-cols-3 md:mx-7 lg:mx-52 justify-center sm:grid-cols-1 md:grid-cols-2'>
 
         {shopItems.map((item) => {
         //    const arr = [item.id , item.name , item.price]
             return (
-                <div className="card bg-base-100 w-96 shadow-xl my-4" key= {item.id}>
+                <div className="card bg-base-100 w-96 sm:w-80 md:w-80 shadow-xl my-4" key= {item.id}>
                 <figure>
                     <Image
                     layout='responsive'
