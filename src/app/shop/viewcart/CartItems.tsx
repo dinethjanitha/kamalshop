@@ -54,7 +54,7 @@ const CartItems = () => {
             })
         }
 
-        {/* change git config details */}
+        {/* reconfig global gitconfig details */}
         
     </div>
   )
