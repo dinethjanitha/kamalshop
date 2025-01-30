@@ -122,6 +122,8 @@ export const CartProvider : React.FC<{children : ReactNode}> = ({children}) => {
     console.log(totalCartItems)
 
 
+    
+
     return (
         <ShopContext.Provider value={{cartItems ,total, addToCart , removeFromCart , addQuantity  ,deQuantity}}>
             {children}
