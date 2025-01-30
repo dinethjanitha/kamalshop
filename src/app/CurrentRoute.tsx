@@ -9,29 +9,31 @@ const CurrentRoute = () => {
   
 
   return (
-    <div className="navbar-center hidden lg:flex">
+    <div className=" relative navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1  gap-3">
+      <li>
+          <Link href="/" className={pathName == "/" ? "underline  bg-slate-400" : ""}>
+            Home
+          </Link>
+        </li>
         <li>
           <Link href="/shop" className={pathName == "/shop" ? "underline  bg-slate-400" : ""}>
             Shop
           </Link>
         </li>
+        
         <li>
-          <details>
-            <summary className=" ">Parent</summary>
-            <ul className="p-2">
-              <li>
-                <a className="">Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </details>
+          <a>Contacts Us</a>
         </li>
         <li>
-          <a>Item 3</a>
-        </li>
+        <details>
+          <summary>Parent</summary>
+          <ul className="bg-base-100 rounded-t-none p-2 z-0">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
       </ul>
     </div>
   );

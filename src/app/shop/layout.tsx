@@ -1,7 +1,4 @@
 import React, { ReactNode } from 'react'
-import { CartProvider } from './ShopContext'
-import NavBar from '../NavBar'
-
 
 interface Props {
     children : ReactNode
@@ -9,11 +6,10 @@ interface Props {
 
 const layout = ({children }: Props) => {
   return (
-    <CartProvider>
-      
-         <NavBar/>
+    <div>
+         
         {children}
-  </CartProvider>
+  </div>
     
   )
 }

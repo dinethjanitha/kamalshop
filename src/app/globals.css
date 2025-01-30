@@ -183,6 +183,11 @@ body {
 		border-radius: 50%;
 	}
 }
+
+
+.bg-cover-photo{
+	background-image: url('./image-01.jpg');
+}
 /*
 -- End BackGround Animation 
 */
